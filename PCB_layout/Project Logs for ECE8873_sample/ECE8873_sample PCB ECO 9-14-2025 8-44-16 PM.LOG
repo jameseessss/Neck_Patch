@@ -1,0 +1,43 @@
+Added Component: Designator=J1(691415520002)
+Add component (AddParameter): Name = "Contact Material"; Value = "Nickel, Tin"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current Rating"; Value = "10A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "13.1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "120°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-30°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "105951365"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Contacts"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Rows"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "300V"; VariantName = "[No Variations]"
+Added Component: Designator=J2(FP-502585-0270-MFG)
+Added Component: Designator=J3(FP-502585-0270-MFG)
+Added Component: Designator=J4(FCI-10104110-0001LF_V)
+Add component (AddParameter): Name = "Connector Mounting"; Value = "PCB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Connector Type"; Value = "USBMicroB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Plating"; Value = "Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Termination"; Value = "SurfaceMountRightAngle"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "http://portal.fciconnect.com/Comergent//fci/drawing/10104110.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "Rev. C, 03/2011"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gender"; Value = "Receptacle"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "FCI Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://portal.fciconnect.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "SurfaceMount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "No. of Contacts"; Value = "5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "5-Pin Surface Mount Device, Body 8.06 x 5.6 mm, Pitch 0.65 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "10104110-0001LF"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J1-1
+Added Pin To Net: NetName=VBAT1 Pin=J1-2
+Added Pin To Net: NetName=VBAT1 Pin=J1-2
+Added Pin To Net: NetName=NetJ2_1 Pin=J2-1
+Added Pin To Net: NetName=GND Pin=J2-2
+Added Pin To Net: NetName=NetJ3_1 Pin=J3-1
+Added Pin To Net: NetName=GND Pin=J3-2
+Added Pin To Net: NetName=NetC1_1 Pin=J4-1
+Added Pin To Net: NetName=D_N Pin=J4-2
+Added Pin To Net: NetName=D_P Pin=J4-3
+Added Pin To Net: NetName=NetFB2_1 Pin=J4-5
+Added Pin To Net: NetName=NetC3_2 Pin=J4-6
+Added Member To Class: ClassName=ECE8873_sample Member=Component J1 691415520002
+Added Member To Class: ClassName=ECE8873_sample Member=Component J2 502585-0270
+Added Member To Class: ClassName=ECE8873_sample Member=Component J3 502585-0270
+Added Member To Class: ClassName=ECE8873_sample Member=Component J4 10104110-0001LF

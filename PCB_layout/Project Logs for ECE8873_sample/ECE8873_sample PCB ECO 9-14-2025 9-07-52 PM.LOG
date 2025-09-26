@@ -1,0 +1,18 @@
+Added Component: Designator=U4(DSG0008A)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2025 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet"; Value = "https://www.ti.com/lit/gpn/drv8837"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "DRV8837DSGR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "DRV8837DSGR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "DRV8837DSGR.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "TYPE"; Value = "TYPE"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VBAT1 Pin=U4-1
+Added Pin To Net: NetName=OUT1 Pin=U4-2
+Added Pin To Net: NetName=OUT2 Pin=U4-3
+Added Pin To Net: NetName=GND Pin=U4-4
+Added Pin To Net: NetName=P1.12 Pin=U4-5
+Added Pin To Net: NetName=P1.11 Pin=U4-6
+Added Pin To Net: NetName=VDD Pin=U4-8
+Added Pin To Net: NetName=GND Pin=U4-9
+Added Member To Class: ClassName=ECE8873_sample Member=Component U4 DRV8837DSGR

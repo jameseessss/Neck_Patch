@@ -1,0 +1,4 @@
+Change Component DesignItemId : Designator=U5 Old DesignItemId=CMP-021-000000-4 New DesignItemId=CMP-021-000000-5
+Change Component Footprint: Designator=U5 Old Footprint=ISP2053-AX New Footprint=ISP2053-AX
+Change Managed Component Library Link : Designator=U5 Old VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F New VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F Old ItemGUID=3F5B6AC7-0CDE-4396-B0E3-17C2AB82DA70 New ItemGUID=3F5B6AC7-0CDE-4396-B0E3-17C2AB82DA70 Old RevisionGUID=02cb823d-71a4-4b55-ac4e-59c797c53bec New RevisionGUID=02b5a902-cbff-4743-b241-a4f35546e6ec
+Added Member To Class: ClassName=ECE8873_sample Member=Component LS3 HD-LA1307-SM

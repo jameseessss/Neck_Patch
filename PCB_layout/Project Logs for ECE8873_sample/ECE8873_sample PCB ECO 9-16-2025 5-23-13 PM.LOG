@@ -1,0 +1,18 @@
+Change Component Designator: OldDesignator=LS1 NewDesignator=LS3
+Change Component Designator: OldDesignator=LS3 NewDesignator=LS1
+Added Member To Class: ClassName=ECE8873_sample Member=Component C5 1 µF
+Added Member To Class: ClassName=ECE8873_sample Member=Component C6 100nF
+Added Member To Class: ClassName=ECE8873_sample Member=Component C8 100nF
+Added Member To Class: ClassName=ECE8873_sample Member=Component C9 100nF
+Added Member To Class: ClassName=ECE8873_sample Member=Component D1 150080BS75000
+Added Member To Class: ClassName=ECE8873_sample Member=Component D2 150080BS75000
+Added Member To Class: ClassName=ECE8873_sample Member=Component LS3 HD-LA1307-SM
+Added Member To Class: ClassName=ECE8873_sample Member=Component R2 470O
+Added Member To Class: ClassName=ECE8873_sample Member=Component R3 4.7kO
+Added Member To Class: ClassName=ECE8873_sample Member=Component R6 470O
+Added Member To Class: ClassName=ECE8873_sample Member=Component R7 10kO
+Added Member To Class: ClassName=ECE8873_sample Member=Component R10 470O
+Added Member To Class: ClassName=ECE8873_sample Member=Component U5 ISP2053_Pinout_New
+Added Member To Class: ClassName=ECE8873_sample Member=Component U6 DRV8837DSGR
+Added Member To Class: ClassName=ECE8873_sample Member=Component U7 DRV8837DSGR
+Added Member To Class: ClassName=ECE8873_sample Member=Component U8 MCP73831T-2ACI/OT

@@ -1,0 +1,46 @@
+Change Footprint: Footprint Not Found RESC3116X70N
+Change Footprint: Footprint Not Found RESC3116X70N
+Change Footprint: Footprint Not Found RESC3116X70N
+Add component: Footprint Not Found CAPC0603X03L_C
+Add component: Footprint Not Found CAPC0603X03L_C
+Add component: Footprint Not Found CAPC0603X03L_C
+Add component: Footprint Not Found INDC1005X04L
+Add component: Footprint Not Found INDC1005X04L
+Add component: Footprint Not Found INDC1005X04L
+Add component: Footprint Not Found RESC0603X26N
+Add component: Footprint Not Found Solderbridge
+Add component: Footprint Not Found Solderbridge
+Add component: Footprint Not Found Switch-PB-6.2x6.3mm-SMD
+Add Pin To Net: Unknown Pin: Pin C1-1
+Add Pin To Net: Unknown Pin: Pin C1-2
+Add Pin To Net: Unknown Pin: Pin C2-1
+Add Pin To Net: Unknown Pin: Pin C2-2
+Add Pin To Net: Unknown Pin: Pin C3-1
+Add Pin To Net: Unknown Pin: Pin C3-2
+Add Pin To Net: Unknown Pin: Pin FB1-1
+Add Pin To Net: Unknown Pin: Pin FB1-2
+Add Pin To Net: Unknown Pin: Pin FB2-1
+Add Pin To Net: Unknown Pin: Pin FB2-2
+Add Pin To Net: Unknown Pin: Pin FB3-1
+Add Pin To Net: Unknown Pin: Pin FB3-2
+Add Pin To Net: Unknown Pin: Pin R3-1
+Add Pin To Net: Unknown Pin: Pin R3-2
+Add Pin To Net: Unknown Pin: Pin SB1-1
+Add Pin To Net: Unknown Pin: Pin SB1-2
+Add Pin To Net: Unknown Pin: Pin SB2-1
+Add Pin To Net: Unknown Pin: Pin SB2-2
+Add Pin To Net: Unknown Pin: Pin SW2-1
+Add Pin To Net: Unknown Pin: Pin SW2-2
+Add Class Member: Failed to add class member : Component C1 10nF
+Add Class Member: Failed to add class member : Component C2 100nF
+Add Class Member: Failed to add class member : Component C3 100nF
+Add Class Member: Failed to add class member : Component FB1 120R/0.55A
+Add Class Member: Failed to add class member : Component FB2 120R/0.55A
+Add Class Member: Failed to add class member : Component FB3 120R/0.55A
+Added Member To Class: ClassName=ECE8873_sample Member=Component J4 10104110-0001LF
+Add Class Member: Failed to add class member : Component R3 CR0201-FW-1003GLF
+Add Class Member: Failed to add class member : Component SB1 Solderbridge
+Add Class Member: Failed to add class member : Component SB2 Solderbridge
+Add Class Member: Failed to add class member : Component SW2 PB SW
+Added Member To Class: ClassName=ECE8873_sample Member=Component U1 PTPS7A0218PDQNR
+Added Member To Class: ClassName=ECE8873_sample Member=Component U2 BMI270

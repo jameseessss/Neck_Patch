@@ -1,0 +1,6 @@
+Added Pin To Net: NetName=VDD Pin=U1-7
+Added Pin To Net: NetName=VDD Pin=U4-7
+Added Pin To Net: NetName=VDD Pin=U6-7
+Added Pin To Net: NetName=VDD Pin=U7-7
+Added Rule: Name=Schematic Supply Nets
+Added Rule: Name=Schematic Supply Nets_1

@@ -1,0 +1,10 @@
+Change Component Footprint: Designator=U2 Old Footprint=DQN0004A-MFG New Footprint=DQN0004A-MFG
+Change Managed Component Library Link : Designator=U2 Old VaultGUID= New VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F Old ItemGUID= New ItemGUID=AAD681EA-C89A-4AF6-AB30-5A202BCF6ED3 Old RevisionGUID= New RevisionGUID=48D4D176-9C83-4028-94B6-08796461927B
+Change component parameters: Designator = "U2" ("U2"); Footprint = "DQN0004A-MFG"; UniqueID = "\BKYRRNAP" ("\BKYRRNAP")
+Change component parameters (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2025 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Design Item ID"; Value = "PTPS7A0218PDQNR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "PTPS7A0218PDQNR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Source"; Value = "PTPS7A0218PDQNR.SchLib"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TYPE"; Value = "TYPE"; VariantName = "[No Variations]"

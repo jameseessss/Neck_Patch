@@ -1,0 +1,7 @@
+Change Component Comment : Designator=U2 Old Comment=TPS7A0230PDQNR New Comment=PTPS7A0218PDQNR
+Change component parameters: Designator = "U2" ("U2"); Footprint = "DQN0004A-MFG"; UniqueID = "\FGONHRLR" ("\FGONHRLR")
+Change component parameters (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2025 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "PTPS7A0218PDQNR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RefDes"; Value = "RefDes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "TYPE"; Value = "TYPE"; VariantName = "[No Variations]"

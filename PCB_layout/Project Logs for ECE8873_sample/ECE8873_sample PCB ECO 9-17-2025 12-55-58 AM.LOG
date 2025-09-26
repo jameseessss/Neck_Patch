@@ -1,0 +1,58 @@
+Added Component: Designator=U5(ISP2053-AX)
+Add component (AddParameter): Name = "BOI"; Value = "QFN 8 x 8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "BOI-Metric"; Value = "QFN 8 x 8"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Clock Frequency"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DESIG"; Value = "BLE Module"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "ISP2053_Pinout_New"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "FAB"; Value = "Insight SiP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "I/Os"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Interface"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ISP_PART"; Value = "ISP1807"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Supply Voltage"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Supply Voltage"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Nominal Supply Voltage"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "74"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RAM Size"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "ISPlibSch.SchLib"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=U5-A1
+Added Pin To Net: NetName=SCL Pin=U5-A3
+Added Pin To Net: NetName=GND Pin=U5-A11
+Added Pin To Net: NetName=P1.15 Pin=U5-B2
+Added Pin To Net: NetName=A0 Pin=U5-B4
+Added Pin To Net: NetName=A1 Pin=U5-B8
+Added Pin To Net: NetName=SDA Pin=U5-B10
+Added Pin To Net: NetName=VDD Pin=U5-C1
+Added Pin To Net: NetName=P1.05 Pin=U5-C10
+Added Pin To Net: NetName=SWDIO Pin=U5-C11
+Added Pin To Net: NetName=P1.13 Pin=U5-D1
+Added Pin To Net: NetName=P0.21 Pin=U5-D3
+Added Pin To Net: NetName=P0.22 Pin=U5-D5
+Added Pin To Net: NetName=P0.20 Pin=U5-D6
+Added Pin To Net: NetName=P1.08 Pin=U5-D7
+Added Pin To Net: NetName=P1.09 Pin=U5-D8
+Added Pin To Net: NetName=SWDCLK Pin=U5-D11
+Added Pin To Net: NetName=P1.14 Pin=U5-E1
+Added Pin To Net: NetName=P1.12 Pin=U5-E4
+Added Pin To Net: NetName=P1.11 Pin=U5-E5
+Added Pin To Net: NetName=GND Pin=U5-E7
+Added Pin To Net: NetName=RESET Pin=U5-E11
+Added Pin To Net: NetName=GND Pin=U5-F1
+Added Pin To Net: NetName=P1.06 Pin=U5-F2
+Added Pin To Net: NetName=P0.23 Pin=U5-F3
+Added Pin To Net: NetName=P1.07 Pin=U5-F4
+Added Pin To Net: NetName=P1.10 Pin=U5-F5
+Added Pin To Net: NetName=GND Pin=U5-F6
+Added Pin To Net: NetName=N$4 Pin=U5-F7
+Added Pin To Net: NetName=N$4 Pin=U5-F8
+Added Pin To Net: NetName=GND Pin=U5-F9
+Added Pin To Net: NetName=GND Pin=U5-F11
+Added Member To Class: ClassName=ECE8873_sample Member=Component U5 ISP2053_Pinout_New

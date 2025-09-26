@@ -1,0 +1,110 @@
+Removed Pin From Net: NetName=VDD Pin=R?-2
+Removed Member From Class: ClassName=ECE8873_sample Member=U?
+Change Footprint: Footprint Not Found RESC3116X70N
+Change Footprint: Footprint Not Found RESC3116X70N
+Change Footprint: Footprint Not Found RESC3116X70N
+Change Component Comment : Designator=R? Old Comment=CR2512AJW-103ELF New Comment=WCR1206-10KFA
+Change Component Comment : Designator=R? Old Comment=CR2512AJW-103ELF New Comment=WCR1206-10KFA
+Change Component Comment : Designator=R? Old Comment=CR2512AJW-103ELF New Comment=WCR1206-10KFA
+Change Component Designator: OldDesignator=CA NewDesignator=CA1
+Change Component Designator: OldDesignator=CB NewDesignator=CB1
+Change Component Designator: OldDesignator=J? NewDesignator=J1
+Change Component Designator: OldDesignator=J? NewDesignator=J2
+Change Component Designator: OldDesignator=J? NewDesignator=J3
+Change Component Designator: OldDesignator=J? NewDesignator=J4
+Change Component Designator: OldDesignator=R? NewDesignator=R1
+Change Component Designator: OldDesignator=R? NewDesignator=R2
+Change Component Designator: OldDesignator=R? NewDesignator=R4
+Change Component Designator: OldDesignator=R? NewDesignator=R5
+Change Component Designator: OldDesignator=R? NewDesignator=R6
+Change Component Designator: OldDesignator=U1 NewDesignator=U3
+Change Component Designator: OldDesignator=U2 NewDesignator=U1
+Change Component Designator: OldDesignator=U? NewDesignator=U2
+Change component parameters: Designator = "R?" ("R6"); Footprint = "RESC6332X70N"; UniqueID = "\MLLKAQDK" ("\MLLKAQDK")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "http://www.ttelectronicsresistors.com/datasheets/WCR.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.7mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "TT Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "WCR1206-10KFA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "756-WCR1206-10KFA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Welwyn-Components-TT-Electronics/WCR1206-10KFA?qs=%2F5Ar%2FAxv93BmASrNMNwG6w%3D%3D"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R?" ("R5"); Footprint = "RESC6332X70N"; UniqueID = "\ZLGGRXDL" ("\ZLGGRXDL")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "http://www.ttelectronicsresistors.com/datasheets/WCR.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.7mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "TT Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "WCR1206-10KFA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "756-WCR1206-10KFA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Welwyn-Components-TT-Electronics/WCR1206-10KFA?qs=%2F5Ar%2FAxv93BmASrNMNwG6w%3D%3D"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R?" ("R4"); Footprint = "RESC6332X70N"; UniqueID = "\XBAATRJF" ("\XBAATRJF")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "http://www.ttelectronicsresistors.com/datasheets/WCR.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.7mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "TT Electronics"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "WCR1206-10KFA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "756-WCR1206-10KFA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/Welwyn-Components-TT-Electronics/WCR1206-10KFA?qs=%2F5Ar%2FAxv93BmASrNMNwG6w%3D%3D"; VariantName = "[No Variations]"
+Add component: Footprint Not Found CAPC0603X03L_C
+Add component: Footprint Not Found CAPC0603X03L_C
+Add component: Footprint Not Found CAPC0603X03L_C
+Add component: Footprint Not Found INDC1005X04L
+Add component: Footprint Not Found INDC1005X04L
+Add component: Footprint Not Found INDC1005X04L
+Add component: Footprint Not Found RESC0603X26N
+Add component: Footprint Not Found Solderbridge
+Add component: Footprint Not Found Solderbridge
+Add component: Footprint Not Found Switch-PB-6.2x6.3mm-SMD
+Add Pin To Net: Unknown Pin: Pin C1-2
+Add Pin To Net: Unknown Pin: Pin C2-1
+Add Pin To Net: Unknown Pin: Pin C2-2
+Add Pin To Net: Unknown Pin: Pin C3-1
+Add Pin To Net: Unknown Pin: Pin FB1-2
+Add Pin To Net: Unknown Pin: Pin FB2-2
+Add Pin To Net: Unknown Pin: Pin FB3-2
+Add Pin To Net: Unknown Pin: Pin R3-2
+Added Pin To Net: NetName=GND Pin=R6-1
+Add Pin To Net: Unknown Pin: Pin SB1-1
+Add Pin To Net: Unknown Pin: Pin SB2-2
+Add Pin To Net: Unknown Pin: Pin SW2-1
+Add Pin To Net: Unknown Pin: Pin SW2-2
+Added Pin To Net: NetName=NetC1_1 Pin=J4-1
+Added Net: Name=NetC1_1
+Added Pin To Net: NetName=NetC3_2 Pin=J4-6
+Added Pin To Net: NetName=NetC3_2 Pin=R6-2
+Added Net: Name=NetC3_2
+Added Pin To Net: NetName=NetFB2_1 Pin=J4-5
+Added Net: Name=NetFB2_1
+Added Pin To Net: NetName=NetJ2_1 Pin=J2-1
+Added Pin To Net: NetName=NetJ2_1 Pin=J2-1
+Added Pin To Net: NetName=NetJ2_1 Pin=R4-1
+Added Pin To Net: NetName=NetJ2_1 Pin=U3-E6
+Added Net: Name=NetJ2_1
+Added Pin To Net: NetName=NetJ3_1 Pin=J3-1
+Added Pin To Net: NetName=NetJ3_1 Pin=J3-1
+Added Pin To Net: NetName=NetJ3_1 Pin=R5-1
+Added Pin To Net: NetName=NetJ3_1 Pin=U3-E9
+Added Net: Name=NetJ3_1
+Added Net: Name=NetR3_1
+Added Pin To Net: NetName=NetSB2_1 Pin=U3-C8
+Added Net: Name=NetSB2_1
+Add Class Member: Failed to add class member : Component C1 10nF
+Add Class Member: Failed to add class member : Component C2 100nF
+Add Class Member: Failed to add class member : Component C3 100nF
+Add Class Member: Failed to add class member : Component FB1 120R/0.55A
+Add Class Member: Failed to add class member : Component FB2 120R/0.55A
+Add Class Member: Failed to add class member : Component FB3 120R/0.55A
+Added Member To Class: ClassName=ECE8873_sample Member=Component J1 691415520002
+Added Member To Class: ClassName=ECE8873_sample Member=Component J2 691415520002
+Added Member To Class: ClassName=ECE8873_sample Member=Component J3 691415520002
+Added Member To Class: ClassName=ECE8873_sample Member=Component R2 CHP1206AFX-4701ELF
+Add Class Member: Failed to add class member : Component R3 CR0201-FW-1003GLF
+Added Member To Class: ClassName=ECE8873_sample Member=Component R4 WCR1206-10KFA
+Added Member To Class: ClassName=ECE8873_sample Member=Component R5 WCR1206-10KFA
+Added Member To Class: ClassName=ECE8873_sample Member=Component R6 WCR1206-10KFA
+Add Class Member: Failed to add class member : Component SB1 Solderbridge
+Add Class Member: Failed to add class member : Component SB2 Solderbridge
+Add Class Member: Failed to add class member : Component SW2 PB SW
+Added Member To Class: ClassName=ECE8873_sample Member=Component U3 ISP2053_Pinout_New

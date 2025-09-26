@@ -1,0 +1,118 @@
+Removed Pin From Net: NetName=SCL Pin=ST1-1
+Removed Pin From Net: NetName=SDA Pin=ST2-1
+Removed Pin From Net: NetName=OUT1 Pin=ST3-1
+Removed Pin From Net: NetName=OUT2 Pin=ST4-1
+Removed Member From Class: ClassName=ECE8873_sample Member=ST1
+Removed Member From Class: ClassName=ECE8873_sample Member=ST2
+Removed Member From Class: ClassName=ECE8873_sample Member=ST3
+Removed Member From Class: ClassName=ECE8873_sample Member=ST4
+Change Footprint: Cannot match pads with new footprint in component :J2 Footprint:FP-502585-0270-MFG
+Change Footprint: Cannot match pads with new footprint in component :J3 Footprint:FP-502585-0270-MFG
+Added Component: Designator=TP1(TESTPAD-TH)
+Add component (AddParameter): Name = "Artikkelnr Noca"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Class"; Value = "Connectors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Supplier link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "Testpoint TH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Footprint Doc"; Value = "TESTPAD-TH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "2009-12-12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pad Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "Testpoint TH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part number IPS"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartId"; Value = "100500464"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "2009-12-12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Nordic Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "pca10095.SCHLIB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "TP"; VariantName = "[No Variations]"
+Added Component: Designator=TP2(TESTPAD-TH)
+Add component (AddParameter): Name = "Artikkelnr Noca"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Class"; Value = "Connectors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Supplier link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "Testpoint TH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Footprint Doc"; Value = "TESTPAD-TH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "2009-12-12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pad Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "Testpoint TH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part number IPS"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartId"; Value = "100500464"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "2009-12-12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Nordic Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "pca10095.SCHLIB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "TP"; VariantName = "[No Variations]"
+Added Component: Designator=TP3(TESTPAD-TH)
+Add component (AddParameter): Name = "Artikkelnr Noca"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Class"; Value = "Connectors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Supplier link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "Testpoint TH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Footprint Doc"; Value = "TESTPAD-TH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "2009-12-12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pad Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "Testpoint TH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part number IPS"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartId"; Value = "100500464"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "2009-12-12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Nordic Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "pca10095.SCHLIB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "TP"; VariantName = "[No Variations]"
+Added Component: Designator=TP4(TESTPAD-TH)
+Add component (AddParameter): Name = "Artikkelnr Noca"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Class"; Value = "Connectors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Supplier link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "Testpoint TH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Footprint Doc"; Value = "TESTPAD-TH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "2009-12-12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pad Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "Testpoint TH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part number IPS"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartId"; Value = "100500464"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "2009-12-12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Nordic Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "pca10095.SCHLIB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "TP"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=SCL Pin=TP1-1
+Added Pin To Net: NetName=SDA Pin=TP2-1
+Added Pin To Net: NetName=OUT1 Pin=TP3-1
+Added Pin To Net: NetName=OUT2 Pin=TP4-1
+Added Member To Class: ClassName=ECE8873_sample Member=Component TP1 Testpoint TH
+Added Member To Class: ClassName=ECE8873_sample Member=Component TP2 Testpoint TH
+Added Member To Class: ClassName=ECE8873_sample Member=Component TP3 Testpoint TH
+Added Member To Class: ClassName=ECE8873_sample Member=Component TP4 Testpoint TH

@@ -1,0 +1,4 @@
+Change Component DesignItemId : Designator=U3 Old DesignItemId=ISP2053_Pinout_New New DesignItemId=CMP-021-000000-1
+Change Component Comment : Designator=U3 Old Comment=ISP1807 New Comment=CMP-021-000000-1
+Change Component Library : Designator=U3 Old Library=ISPlibSch.SchLib New Library=Georgia Institute of Technology
+Change Managed Component Library Link : Designator=U3 Old VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F New VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F Old ItemGUID= New ItemGUID=3F5B6AC7-0CDE-4396-B0E3-17C2AB82DA70 Old RevisionGUID= New RevisionGUID=E9E5648E-ECB2-4B3F-BA23-5E8D8B036625

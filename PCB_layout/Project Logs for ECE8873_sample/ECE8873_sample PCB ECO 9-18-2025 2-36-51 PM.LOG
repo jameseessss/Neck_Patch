@@ -1,0 +1,180 @@
+Removed Pin From Net: NetName=NetLED1_1 Pin=R10-1
+Removed Pin From Net: NetName=NetR10_2 Pin=R10-2
+Removed Member From Class: ClassName=ECE8873_sample Member=R?
+Change Component Footprint: Designator=R2 Old Footprint=FP-PRF18-PRG18-0_15-MFG New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R4 Old Footprint=FP-PRF18-PRG18-0_15-MFG New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R5 Old Footprint=FP-PRF18-PRG18-0_15-MFG New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R6 Old Footprint=FP-PRF18-PRG18-0_15-MFG New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R9 Old Footprint=FP-PRF18-PRG18-0_15-MFG New Footprint=RESC1608X55N
+Change Component Footprint: Designator=R12 Old Footprint=FP-PRF18-PRG18-0_15-MFG New Footprint=RESC1608X55N
+Change Component Comment : Designator=R2 Old Comment=470O New Comment=SG73P1JTTD4700F
+Change Component Comment : Designator=R4 Old Comment=470O New Comment=SG73P1JTTD4700F
+Change Component Comment : Designator=R5 Old Comment=470O New Comment=SG73P1JTTD4700F
+Change Component Comment : Designator=R6 Old Comment=470O New Comment=SG73P1JTTD4700F
+Change Component Comment : Designator=R9 Old Comment=470O New Comment=SG73P1JTTD4700F
+Change Component Comment : Designator=R12 Old Comment=470O New Comment=SG73P1JTTD4700F
+Change Component Designator: OldDesignator=R? NewDesignator=R10
+Change Managed Component Library Link : Designator=R2 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F Old ItemGUID=3A88DDED-D67A-4078-9839-C46E7E483308 New ItemGUID=45E03C67-BC22-4E7B-8FB7-72C9F5F96F04 Old RevisionGUID=89959688-F604-44F7-84B0-9E7803445CFA New RevisionGUID=39d913ed-eea6-4c07-9c23-fe28ee88e1ca
+Change Managed Component Library Link : Designator=R4 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F Old ItemGUID=3A88DDED-D67A-4078-9839-C46E7E483308 New ItemGUID=45E03C67-BC22-4E7B-8FB7-72C9F5F96F04 Old RevisionGUID=89959688-F604-44F7-84B0-9E7803445CFA New RevisionGUID=39d913ed-eea6-4c07-9c23-fe28ee88e1ca
+Change Managed Component Library Link : Designator=R5 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F Old ItemGUID=3A88DDED-D67A-4078-9839-C46E7E483308 New ItemGUID=45E03C67-BC22-4E7B-8FB7-72C9F5F96F04 Old RevisionGUID=89959688-F604-44F7-84B0-9E7803445CFA New RevisionGUID=39d913ed-eea6-4c07-9c23-fe28ee88e1ca
+Change Managed Component Library Link : Designator=R6 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F Old ItemGUID=3A88DDED-D67A-4078-9839-C46E7E483308 New ItemGUID=45E03C67-BC22-4E7B-8FB7-72C9F5F96F04 Old RevisionGUID=89959688-F604-44F7-84B0-9E7803445CFA New RevisionGUID=39d913ed-eea6-4c07-9c23-fe28ee88e1ca
+Change Managed Component Library Link : Designator=R9 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F Old ItemGUID=3A88DDED-D67A-4078-9839-C46E7E483308 New ItemGUID=45E03C67-BC22-4E7B-8FB7-72C9F5F96F04 Old RevisionGUID=89959688-F604-44F7-84B0-9E7803445CFA New RevisionGUID=39d913ed-eea6-4c07-9c23-fe28ee88e1ca
+Change Managed Component Library Link : Designator=R12 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F Old ItemGUID=3A88DDED-D67A-4078-9839-C46E7E483308 New ItemGUID=45E03C67-BC22-4E7B-8FB7-72C9F5F96F04 Old RevisionGUID=89959688-F604-44F7-84B0-9E7803445CFA New RevisionGUID=39d913ed-eea6-4c07-9c23-fe28ee88e1ca
+Change component parameters: Designator = "R2" ("R2"); Footprint = "FP-PRF18-PRG18-0_15-MFG"; UniqueID = "\FOGCXSMX" ("\FOGCXSMX")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Design Item ID"; Value = "SG73P1JTTD4700F"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "SG73P1JTTD4700F"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Source"; Value = "SG73P1JTTD4700F.SchLib"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "470"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "R4" ("R4"); Footprint = "FP-PRF18-PRG18-0_15-MFG"; UniqueID = "\TUPUPIFM" ("\TUPUPIFM")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Design Item ID"; Value = "SG73P1JTTD4700F"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "SG73P1JTTD4700F"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Source"; Value = "SG73P1JTTD4700F.SchLib"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "470"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "R5" ("R5"); Footprint = "FP-PRF18-PRG18-0_15-MFG"; UniqueID = "\DJRYESBT" ("\DJRYESBT")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Design Item ID"; Value = "SG73P1JTTD4700F"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "SG73P1JTTD4700F"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Source"; Value = "SG73P1JTTD4700F.SchLib"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "470"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6" ("R6"); Footprint = "FP-PRF18-PRG18-0_15-MFG"; UniqueID = "\VTFAWLCW" ("\VTFAWLCW")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Design Item ID"; Value = "SG73P1JTTD4700F"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "SG73P1JTTD4700F"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Source"; Value = "SG73P1JTTD4700F.SchLib"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "470"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9" ("R9"); Footprint = "FP-PRF18-PRG18-0_15-MFG"; UniqueID = "\KARMXXII" ("\KARMXXII")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Design Item ID"; Value = "SG73P1JTTD4700F"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "SG73P1JTTD4700F"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Source"; Value = "SG73P1JTTD4700F.SchLib"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "470"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "R12" ("R12"); Footprint = "FP-PRF18-PRG18-0_15-MFG"; UniqueID = "\IAXBFLUW" ("\IAXBFLUW")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case/Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Design Item ID"; Value = "SG73P1JTTD4700F"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "SG73P1JTTD4700F"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = "2"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Source"; Value = "SG73P1JTTD4700F.SchLib"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "470"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=VBin_N(TP_SMD_Ø1.0mm)
+Add component (AddParameter): Name = "Artikkelnr Noca"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Class"; Value = "Connectors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Supplier link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "TP_SMD_Ø1.0MM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Footprint Doc"; Value = "TP_SMD_Ø1.0mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "2013-06-11"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Nordic Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pad Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "TP_SMD_Ø1.0MM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part number IPS"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartId"; Value = "100500475"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "2013-06-11"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Nordic Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "pca10095.SCHLIB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Ø1.0mm,SMD"; VariantName = "[No Variations]"
+Added Component: Designator=VBin_P(TP_SMD_Ø1.0mm)
+Add component (AddParameter): Name = "Artikkelnr Noca"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Class"; Value = "Connectors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Supplier link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "TP_SMD_Ø1.0MM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Footprint Doc"; Value = "TP_SMD_Ø1.0mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "2013-06-11"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Nordic Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pad Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "TP_SMD_Ø1.0MM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part number IPS"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartId"; Value = "100500475"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "2013-06-11"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Nordic Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "pca10095.SCHLIB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Ø1.0mm,SMD"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetLED1_1 Pin=R10-1
+Added Pin To Net: NetName=NetR10_2 Pin=R10-2
+Added Pin To Net: NetName=GND Pin=VBin_N-1
+Added Pin To Net: NetName=VBAT1 Pin=VBin_P-1
+Added Member To Class: ClassName=ECE8873_sample Member=Component VBin_N TP_SMD_Ø1.0MM
+Added Member To Class: ClassName=ECE8873_sample Member=Component VBin_P TP_SMD_Ø1.0MM

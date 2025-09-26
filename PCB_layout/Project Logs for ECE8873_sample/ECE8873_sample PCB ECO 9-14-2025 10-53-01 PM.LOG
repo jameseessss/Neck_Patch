@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=C? NewDesignator=C8
+Add Differential Pair: Number of nets in differential pair HAP_N1 is 1 instead of 2
+Add Differential Pair: Number of nets in differential pair HAP_N2 is 1 instead of 2
+Add Differential Pair: Number of nets in differential pair HAP_P1 is 1 instead of 2
+Add Differential Pair: Number of nets in differential pair HAP_P2 is 1 instead of 2

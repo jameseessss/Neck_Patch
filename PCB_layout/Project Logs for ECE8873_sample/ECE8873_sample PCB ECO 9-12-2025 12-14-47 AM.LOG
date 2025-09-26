@@ -1,0 +1,76 @@
+Added Component: Designator=P1(HDR_2x5-SMD-1.27mm-K)
+Add component (AddParameter): Name = "Artikkelnr Noca"; Value = "55010009"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Author"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Class"; Value = "Connectors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "Supplier link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "Pin Header 2x5 SMD, 1.27mm, KS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Footprint Doc"; Value = "HDR_2x5-SMD-1.27mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "\\hizz\pro\app9717\Datasheet\connectors\W-CON\3132-XXMXXBK00XX.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "2016-04-21"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "W-CON"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "3132-10MS0BK00R1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = "N.A."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pad Count"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "Pin Header 2x5 SMD, 1.27mm, KS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part number IPS"; Value = "00000009968"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part number Norautron"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartId"; Value = "100500261"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "10"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "2016-01-22"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Nordic Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "pca10095.SCHLIB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Pin Header 2x5, 1.27mm"; VariantName = "[No Variations]"
+Add component: Footprint Not Found RESC0603X03L_C
+Add component: Footprint Not Found Solderbridge
+Add component: Footprint Not Found Solderbridge
+Add component: Footprint Not Found Solderbridge_Shorted
+Add component: Footprint Not Found Switch-PB-6.2x6.3mm-SMD
+Added Component: Designator=U?(XDCR_BMI270)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/BMI270/Bosch+Sensortec/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "BMI270"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Part_Number"; Value = "828-1091-2-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Bosch Sensortec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "BMI270"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "LGA-14 Bosch Sensortec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "14"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/BMI270/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/BMI270/Bosch+Sensortec/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "BMI270.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=P1-3
+Added Pin To Net: NetName=GND Pin=P1-5
+Added Pin To Net: NetName=GND Pin=P1-9
+Add Pin To Net: Unknown Pin: Pin R1-2
+Add Pin To Net: Unknown Pin: Pin SB2-2
+Add Pin To Net: Unknown Pin: Pin SW2-1
+Added Net: Name=BOOT/RESET
+Added Net: Name=NetR1_1
+Added Pin To Net: NetName=RESET Pin=P1-10
+Added Net: Name=RESET
+Added Pin To Net: NetName=SWDCLK Pin=P1-4
+Added Pin To Net: NetName=SWDCLK Pin=U3A-D11
+Added Net: Name=SWDCLK
+Added Pin To Net: NetName=SWDIO Pin=P1-2
+Added Pin To Net: NetName=SWDIO Pin=U3A-C11
+Added Net: Name=SWDIO
+Added Pin To Net: NetName=SWO Pin=P1-6
+Added Net: Name=SWO
+Added Pin To Net: NetName=VDBG Pin=P1-1
+Added Net: Name=VDBG
+Added Net: Name=VDD_nRF'
+Added Member To Class: ClassName=ECE8873_sample Member=Component P1 Pin Header 2x5 SMD, 1.27mm, KS
+Add Class Member: Failed to add class member : Component R1 100k
+Add Class Member: Failed to add class member : Component SB1 Solderbridge
+Add Class Member: Failed to add class member : Component SB2 Solderbridge
+Add Class Member: Failed to add class member : Component SB3 Solderbridge
+Add Class Member: Failed to add class member : Component SW2 PB SW
+Added Member To Class: ClassName=ECE8873_sample Member=Component U? BMI270
+Added Rule: Name=Schematic Supply Nets_1
+Added Rule: Name=Schematic Supply Nets_2
+Added Rule: Name=Schematic Supply Nets_3

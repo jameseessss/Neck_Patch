@@ -1,0 +1,83 @@
+Removed Pin From Net: NetName=VBAT1 Pin=SW1-2
+Removed Pin From Net: NetName=P1.11 Pin=U4-6
+Removed Member From Class: ClassName=ECE8873_sample Member=SW1
+Change Component Footprint: Designator=U1 Old Footprint=DQN0004A-MFG New Footprint=IC_TPS7A0230PDQNR
+Change Component Footprint: Designator=U4 Old Footprint=DSG0008A New Footprint=DSG0008A
+Change Component Comment : Designator=U1 Old Comment=PTPS7A0218PDQNR New Comment=TPS7A0230PDQNR
+Change Managed Component Library Link : Designator=U3 Old VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F New VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F Old ItemGUID=3F5B6AC7-0CDE-4396-B0E3-17C2AB82DA70 New ItemGUID=3F5B6AC7-0CDE-4396-B0E3-17C2AB82DA70 Old RevisionGUID=E9E5648E-ECB2-4B3F-BA23-5E8D8B036625 New RevisionGUID=02cb823d-71a4-4b55-ac4e-59c797c53bec
+Change Managed Component Library Link : Designator=U4 Old VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F New VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F Old ItemGUID=0A116B11-19B3-4D5C-A4B8-C9EE8BB7D3B8 New ItemGUID=0A116B11-19B3-4D5C-A4B8-C9EE8BB7D3B8 Old RevisionGUID=80729DDF-6746-4FCC-B229-0E820C2ABFF0 New RevisionGUID=493e5acf-7742-45ba-a6b5-8d3c181e450d
+Change Managed Component Library Link : Designator=U1 Old VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F New VaultGUID=DFB16FC4-D745-4543-AC9B-F1307EC3457F Old ItemGUID=AAD681EA-C89A-4AF6-AB30-5A202BCF6ED3 New ItemGUID=B2742C24-C40B-433F-A457-E1A8E2953179 Old RevisionGUID=48D4D176-9C83-4028-94B6-08796461927B New RevisionGUID=95A6B6D6-D064-49D9-B0CF-E7E46575B7FC
+Change component parameters: Designator = "U1" ("U1"); Footprint = "DQN0004A-MFG"; UniqueID = "\FPHUNOVR" ("\FPHUNOVR")
+Change component parameters (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/TPS7A0230PDQNR/Texas+Instruments/view-part/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Design Item ID"; Value = "TPS7A0230PDQNR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Texas Instruments"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "TPS7A0230PDQNR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "X2SON-4 Texas Instruments"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "5"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/TPS7A0230PDQNR/Texas+Instruments/view-part/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Source"; Value = "TPS7A0230PDQNR.SchLib"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Change component parameters: Designator = "U3" ("U3"); Footprint = "ISP2053-AX"; UniqueID = "\VONESKNH" ("\VONESKNH")
+Change component parameters (AddParameter): Name = "BOI"; Value = "QFN 8 x 8"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "BOI-Metric"; Value = "QFN 8 x 8"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case/Package"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Clock Frequency"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "DESIG"; Value = "BLE Module"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Design Item ID"; Value = "ISP2053_Pinout_New"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "FAB"; Value = "Insight SiP"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Frequency"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "I/Os"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Interface"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ISP_PART"; Value = "ISP1807"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Supply Voltage"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Supply Voltage"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Nominal Supply Voltage"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "74"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pins"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RAM Size"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS Compliant"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Source"; Value = "ISPlibSch.SchLib"; VariantName = "[No Variations]"
+Added Component: Designator=D?(FP-AAA3528LSEKJ3ZGKQBKS-MFG)
+Add component (AddParameter): Name = "Case/Package"; Value = "PLCC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Blue"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dominant Wavelength"; Value = "465nm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Forward Voltage"; Value = "2.7V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "2.1mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "3.2mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lens Color"; Value = "Colorless"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lens Transparency"; Value = "Clear"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Luminous Intensity"; Value = "30mcd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Test Current"; Value = "2mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Viewing Angle"; Value = "120°"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "2.8mm"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VBAT1 Pin=U1-3
+Added Pin To Net: NetName=P1.11 Pin=U6-4
+Change Net Name : Old Net Name=HAP_N1 New Net Name=HAP1_N
+Change Net Name : Old Net Name=HAP_N2 New Net Name=HAP2_N
+Change Net Name : Old Net Name=HAP_P1 New Net Name=HAP1_P
+Change Net Name : Old Net Name=HAP_P2 New Net Name=HAP2_P
+Added Pin To Net: NetName=P1.07 Pin=U3-F4
+Added Pin To Net: NetName=P1.07 Pin=U4-6
+Added Net: Name=P1.07
+Added Pin To Net: NetName=P1.08 Pin=U3-D7
+Added Pin To Net: NetName=P1.08 Pin=U4-5
+Added Pin To Net: NetName=P1.08 Pin=U5-5
+Added Net: Name=P1.08
+Added Pin To Net: NetName=P1.09 Pin=U3-D8
+Added Pin To Net: NetName=P1.09 Pin=U5-4
+Added Net: Name=P1.09
+Added Pin To Net: NetName=P1.10 Pin=U3-F5
+Added Pin To Net: NetName=P1.10 Pin=U6-5
+Added Net: Name=P1.10
+Added Differential Pair: Name=HAP1
+Added Differential Pair: Name=HAP2
+Added Member To Class: ClassName=ECE8873_sample Member=Component D? AAA3528LSEKJ3ZGKQBKS
