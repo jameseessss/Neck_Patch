@@ -39,35 +39,7 @@ A lightweight, discreet neck-posture coach built on **nRF5340 + IMU**, providing
 
 ---
 
-## 📡 Interaction & Data
-**BLE GATT (example)**
-- `PostureService` (UUID: `xxxxxxxx-xxxx-...`)
-  - `state` (Notify):
-    ```json
-    { "pitch_deg": 12.3, "dwell_ms": 2100, "temp_c": 36.8, "batt": 0.83 }
-    ```
-  - `command` (Write):
-    ```json
-    { "vibrate": 3, "timeout_ms": 400 }
-    { "set_threshold_deg": 15, "dwell_ms": 2000 }
-    { "peltier": { "enable": true, "target_c": 39.0, "max_power_pct": 35 } }
-    ```
-
-**Processing flow**
-1. IMU sampling (DMA/timers) → fusion (quaternion → pitch)  
-2. Dynamic baseline + hysteresis → posture + dwell decision  
-3. LRA and/or **Peltier** actuation with safety checks  
-4. Periodic BLE notifications + host app parameter updates
-
----
-
 ## 🔎 Current Status
 - ✅ IMU fusion, posture logic, multi-level vibration
-- ✅ Core BLE service and data path
 - ✅ Peltier closed-loop heating with temp cap & current limit (pilot)
-- ⏳ More robust safety envelopes (failsafe/rollback/OTA policy)
-- ⏳ Personalization & long-term stats (on-device persistence)
 
----
-
-## 📂 Repository Layout (example)
