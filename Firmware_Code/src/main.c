@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include <math.h>
 
+
+
 /* LED配置 - 使用led1别名 */
 #define LED0_NODE DT_ALIAS(led1)
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED0_NODE, gpios);
