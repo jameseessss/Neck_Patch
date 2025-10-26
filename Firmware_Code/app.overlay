@@ -12,39 +12,171 @@
 			reg = <0x68>;
 		};
 	};
- 
-	/* 你的新PWM配置在这里 */
-	&pwm0 {
-		status = "okay";
-		pinctrl-0 = <&pwm0_default>;
-		pinctrl-1 = <&pwm0_sleep>;
-		pinctrl-names = "default", "sleep";
+ /* STEP 2.2 - Create a zephyr,user node and set it's io-channels to the ADC channels  */
+/ {
+	zephyr,user {
+		io-channels = <&adc 0>;
 	};
- 
-	&pinctrl {
-		pwm0_default: pwm0_default {
-			group1 {
-				psels = <NRF_PSEL(PWM_OUT0, 0, 4)>;
-			};
-		};
- 
-		pwm0_sleep: pwm0_sleep {
-			group1 {
-				psels = <NRF_PSEL(PWM_OUT0, 0, 4)>;
-				low-power-enable;
-			};
-		};
+};
+
+/* STEP 2.3 -Configure the ADC channels  */
+&adc {
+	#address-cells = <1>;
+	#size-cells = <0>;
+	status = "okay";
+	channel@0 {
+		reg = <0>;
+		zephyr,gain = "ADC_GAIN_1_6";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,input-positive = <NRF_SAADC_AIN0>; /* P0.04 for nRF5340 */
+		zephyr,resolution = <12>;
 	};
- 
-	/ {
-		aliases {
-			pwm-led0 = &pwm_led_0;
-		};
- 
-		pwmleds {
-			compatible = "pwm-leds";
-			pwm_led_0: pwm_led_0 {
-				pwms = <&pwm0 0 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
-			};
-		};
+	channel@1 {
+		reg = <1>;
+		zephyr,gain = "ADC_GAIN_1_6";
+		zephyr,reference = "ADC_REF_INTERNAL";
+		zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
+		zephyr,input-positive = <NRF_SAADC_AIN4>; /* P0.05 for nRF5340 */
+		zephyr,resolution = <12>;
 	};
+};
+
+
+
+/* STEP 1.2 -  Add pwm_led instances and change the polarity */
+/{
+    pwmleds {
+        compatible = "pwm-leds";
+        pwm_led0: pwm_led_0 {
+            pwms = <&pwm0 0 PWM_MSEC(10) PWM_POLARITY_NORMAL>;
+        };
+        pwm_led1: pwm_led_1 {
+            pwms = <&pwm0 1 PWM_MSEC(10) PWM_POLARITY_NORMAL>;
+        };
+    };
+    
+    /* LRA震动模块配置 */
+    lra_vibrators {
+        compatible = "pwm-leds";
+        lra_vib1: lra_vibrator_1 {
+            pwms = <&pwm1 0 PWM_MSEC(10) PWM_POLARITY_NORMAL>;
+        };
+        lra_vib2: lra_vibrator_2 {
+            pwms = <&pwm1 1 PWM_MSEC(10) PWM_POLARITY_NORMAL>;
+        };
+    };
+    
+    /* 添加别名定义 */
+    aliases {
+        lra-vib1 = &lra_vib1;
+        lra-vib2 = &lra_vib2;
+    };
+};
+
+
+/* STEP 1.3 - Add your own custom pwm0 instance */
+&pwm0 {
+    status = "okay";
+    pinctrl-0 = <&pwm0_custom>;
+    pinctrl-1 = <&pwm0_csleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+/* PWM1配置用于LRA震动模块 */
+&pwm1 {
+    status = "okay";
+    pinctrl-0 = <&pwm1_custom>;
+    pinctrl-1 = <&pwm1_csleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+/* STEP 1.4 - Configure which pins your custom pwm0 instance should use */
+&pinctrl {
+    pwm0_custom: pwm0_custom {
+        group1 {
+            psels = <NRF_PSEL(PWM_OUT0, 1, 9)>;
+            nordic,invert;
+        };
+        group2 {
+            psels = <NRF_PSEL(PWM_OUT1, 1, 12)>;
+            nordic,invert;
+        };
+    };
+
+    pwm0_csleep: pwm0_csleep {
+        group1 {
+            psels = <NRF_PSEL(PWM_OUT0, 1, 9)>;
+            low-power-enable;
+        };
+        group2 {
+            psels = <NRF_PSEL(PWM_OUT1, 1, 12)>;
+            low-power-enable;
+        };
+    };
+    
+    /* PWM1引脚配置 - LRA震动模块 */
+    pwm1_custom: pwm1_custom {
+        group1 {
+            psels = <NRF_PSEL(PWM_OUT0, 1, 5)>;  /* P1.05 */
+            nordic,invert;
+        };
+        group2 {
+            psels = <NRF_PSEL(PWM_OUT1, 1, 7)>;  /* P1.07 */
+            nordic,invert;
+        };
+    };
+
+    pwm1_csleep: pwm1_csleep {
+        group1 {
+            psels = <NRF_PSEL(PWM_OUT0, 1, 5)>;  /* P1.05 */
+            low-power-enable;
+        };
+        group2 {
+            psels = <NRF_PSEL(PWM_OUT1, 1, 7)>;  /* P1.07 */
+            low-power-enable;
+        };
+    };
+};
+/ {
+    buttons {
+        compatible = "gpio-keys";
+
+        reset_ref: reset_ref {
+            /* turns to the actual PIN - P0.19 (C3) */
+            gpios = <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+            label = "ResetRefPin";
+        };
+    };
+
+    aliases {
+        reset-sw = &reset_ref;
+        led1 = &led1;
+        led2 = &led2;
+        pwm-led1 = &pwm_led1;
+    };
+};
+
+/* LED Configuration */
+/ {
+    leds {
+        compatible = "gpio-leds";
+        led1: led_1 {
+            gpios = <&gpio0 22 GPIO_ACTIVE_HIGH>;
+            label = "LED 1";
+        };
+        led2: led_2 {
+            gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
+            label = "LED 2";
+        };
+    };
+};
+
+
+/* STEP 4.1 - Configure pwm0 to drive the GPIO pin for LED 1 */
+
+
+/* STEP 5.2 - Add the servo device */
+
+
+/* STEP 5.3 - Configure which pins pwm1 should use */
