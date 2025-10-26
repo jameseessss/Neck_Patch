@@ -1,186 +1,306 @@
 /*
  * Copyright (c) 2021 Bosch Sensortec GmbH
- * Copyright (c) 2016 Intel Corporation
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
+#include <zephyr/devicetree.h>
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/drivers/gpio.h>
-#include <stdio.h>
+#include <zephyr/drivers/adc.h>
+#include <zephyr/drivers/pwm.h>
+#include <zephyr/logging/log.h>
 #include <math.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <errno.h>
 
+LOG_MODULE_REGISTER(imu_test, LOG_LEVEL_INF);
 
+/* ===== Thermistor Configuration ===== */
+#define VREF_MV       3000.0
+#define R_FIXED_OHM   10000.0
+#define R0_OHM        10000.0
+#define BETA          3950.0
+#define T0_K          298.15
+#define TEMP_CUTOFF   45.0
 
-/* LED配置 - 使用led1别名 */
-#define LED0_NODE DT_ALIAS(led1)
-static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED0_NODE, gpios);
+/* ===== PWM Peltier Configuration ===== */
+#define PWM_PERIOD_NS   PWM_MSEC(10)   /* 10ms period */
+#define PELTIER_OFF_NS  0
+#define PELTIER_ON_NS   5000000        /* 50% duty cycle */
 
-/* 按钮配置 - 使用sw1别名 (Button 1) */
-#define SW1_NODE DT_ALIAS(sw1)
-static const struct gpio_dt_spec button = GPIO_DT_SPEC_GET_OR(SW1_NODE, gpios, {0});
+/* ===== LRA Vibration Motor Configuration ===== */
+#define LRA_OFF_NS      0
+#define LRA_ON_NS       5000000        /* 50% duty cycle */
 
-/* 按钮中断回调结构 */
-static struct gpio_callback button_cb_data;
+/* ===== Global Variables ===== */
+static int16_t adc_buf;
+static struct adc_sequence adc_seq = {
+    .buffer = &adc_buf,
+    .buffer_size = sizeof(adc_buf),
+};
+static const struct adc_dt_spec adc_channel = ADC_DT_SPEC_GET(DT_PATH(zephyr_user));
 
-/* 全局变量 */
-static double reference_x = 0.0;           /* 参考X轴值 */
-static bool reference_set = false;         /* 是否已设置参考值 */
-static volatile bool should_set_reference = false;  /* 中断标志 */
-static const double MAX_CHANGE = 3.0;      /* 最大变化值 */
+/* ===== Function Declarations ===== */
+static int read_thermistor_mv(int *out_mv);
+static double thermistor_temp_c_from_mv(int vout_mv);
+static int set_peltier_pwm(uint32_t pulse_ns);
+static int set_lra_pwm(uint32_t pulse_ns);
 
-/* 按钮按下中断回调函数 */
-void button_pressed(const struct device *dev, struct gpio_callback *cb, uint32_t pins)
+/* ===== Thermistor Reading Function ===== */
+static int read_thermistor_mv(int *out_mv)
 {
-    /* 在中断中设置标志，让主循环处理参考值设置 */
-    should_set_reference = true;
+    int err = adc_read(adc_channel.dev, &adc_seq);
+    if (err < 0) {
+        LOG_ERR("adc_read failed (%d)", err);
+        return err;
+    }
+    int mv = (int)adc_buf;
+    err = adc_raw_to_millivolts_dt(&adc_channel, &mv);
+    if (err < 0) {
+        LOG_WRN("adc_raw_to_millivolts not supported; raw=%d", (int)adc_buf);
+        return -ENOTSUP;
+    }
+    *out_mv = mv;
+    return 0;
 }
 
-int main(void)
+/* ===== Temperature Calculation Function ===== */
+static double thermistor_temp_c_from_mv(int vout_mv)
 {
-    const struct device *const dev = DEVICE_DT_GET_ONE(bosch_bmi270);
-    struct sensor_value acc[3], gyr[3];
-    struct sensor_value full_scale, sampling_freq, oversampling;
-    int ret;
+    if (vout_mv <= 1) vout_mv = 1;
+    if (vout_mv >= (int)VREF_MV - 1) vout_mv = (int)VREF_MV - 1;
+
+    double v = (double)vout_mv;
+    double r_therm = R_FIXED_OHM * v / (VREF_MV - v); 
+    double inv_T = (1.0 / T0_K) + (1.0 / BETA) * log(r_therm / R0_OHM);
+    double T_k = 1.0 / inv_T;
+    return T_k - 273.15;
+}
+
+/* ===== PWM Control Function ===== */
+static int set_peltier_pwm(uint32_t pulse_ns)
+{
+    /* Use pwm_led0 alias (P0.10) */
+    const struct pwm_dt_spec pwm_peltier = PWM_DT_SPEC_GET(DT_ALIAS(pwm_led0));
     
-    /* 检查IMU设备是否就绪 */
-    if (!device_is_ready(dev)) {
-        printf("Device %s is not ready\n", dev->name);
-        return 0;
+    int err = pwm_set_dt(&pwm_peltier, PWM_PERIOD_NS, pulse_ns);
+    if (err) LOG_ERR("pwm_set_dt err %d", err);
+    return err;
+}
+
+/* ===== LRA Vibration Motor Control Function ===== */
+static int set_lra_pwm(uint32_t pulse_ns)
+{
+    const struct pwm_dt_spec pwm_lra1 = PWM_DT_SPEC_GET(DT_NODELABEL(lra_vib1));
+    const struct pwm_dt_spec pwm_lra2 = PWM_DT_SPEC_GET(DT_NODELABEL(lra_vib2));
+    
+    int err1 = pwm_set_dt(&pwm_lra1, PWM_PERIOD_NS, pulse_ns);
+    int err2 = pwm_set_dt(&pwm_lra2, PWM_PERIOD_NS, pulse_ns);
+    
+    if (err1 < 0) {
+        LOG_ERR("LRA1 PWM set failed (%d)", err1);
+        return err1;
     }
-    
-    /* 检查LED GPIO是否就绪 */
-    if (!gpio_is_ready_dt(&led)) {
-        printf("LED GPIO is not ready\n");
-        return 0;
-    }
-    
-    /* 检查按钮GPIO是否就绪 */
-    if (!gpio_is_ready_dt(&button)) {
-        printf("Button GPIO is not ready\n");
-        return 0;
-    }
-    
-    /* 配置LED为输出模式 */
-    ret = gpio_pin_configure_dt(&led, GPIO_OUTPUT_ACTIVE);
-    if (ret < 0) {
-        printf("Error configuring LED GPIO\n");
-        return 0;
-    }
-    
-    /* 配置按钮为输入模式 */
-    ret = gpio_pin_configure_dt(&button, GPIO_INPUT);
-    if (ret < 0) {
-        printf("Error configuring button GPIO\n");
-        return 0;
-    }
-    
-    /* 配置按钮中断 */
-    ret = gpio_pin_interrupt_configure_dt(&button, GPIO_INT_EDGE_TO_ACTIVE);
-    if (ret < 0) {
-        printf("Error configuring button interrupt\n");
-        return 0;
-    }
-    
-    /* 初始化并添加回调 */
-    gpio_init_callback(&button_cb_data, button_pressed, BIT(button.pin));
-    gpio_add_callback(button.port, &button_cb_data);
-    
-    printf("Device %p name is %s\n", dev, dev->name);
-    
-    /* 配置加速度计 */
-    full_scale.val1 = 2; /* G */
-    full_scale.val2 = 0;
-    sampling_freq.val1 = 100; /* Hz. Performance mode */
-    sampling_freq.val2 = 0;
-    oversampling.val1 = 1; /* Normal mode */
-    oversampling.val2 = 0;
-    
-    sensor_attr_set(dev, SENSOR_CHAN_ACCEL_XYZ, SENSOR_ATTR_FULL_SCALE,
-                    &full_scale);
-    sensor_attr_set(dev, SENSOR_CHAN_ACCEL_XYZ, SENSOR_ATTR_OVERSAMPLING,
-                    &oversampling);
-    sensor_attr_set(dev, SENSOR_CHAN_ACCEL_XYZ,
-                    SENSOR_ATTR_SAMPLING_FREQUENCY,
-                    &sampling_freq);
-    
-    /* 配置陀螺仪 */
-    full_scale.val1 = 500; /* dps */
-    full_scale.val2 = 0;
-    sampling_freq.val1 = 100; /* Hz. Performance mode */
-    sampling_freq.val2 = 0;
-    oversampling.val1 = 1; /* Normal mode */
-    oversampling.val2 = 0;
-    
-    sensor_attr_set(dev, SENSOR_CHAN_GYRO_XYZ, SENSOR_ATTR_FULL_SCALE,
-                    &full_scale);
-    sensor_attr_set(dev, SENSOR_CHAN_GYRO_XYZ, SENSOR_ATTR_OVERSAMPLING,
-                    &oversampling);
-    sensor_attr_set(dev, SENSOR_CHAN_GYRO_XYZ,
-                    SENSOR_ATTR_SAMPLING_FREQUENCY,
-                    &sampling_freq);
-    
-    printf("Press Button 1 to set reference X-axis value\n");
-    printf("Max change threshold: %.1f\n", MAX_CHANGE);
-    
-    while (1) {
-        /* 100ms周期，与100Hz采样频率匹配 */
-        k_sleep(K_MSEC(100));
-        
-        sensor_sample_fetch(dev);
-        sensor_channel_get(dev, SENSOR_CHAN_ACCEL_XYZ, acc);
-        sensor_channel_get(dev, SENSOR_CHAN_GYRO_XYZ, gyr);
-        
-        /* 将加速度值转换为浮点数进行比较 */
-        double acc_x = (double)acc[0].val1 + (double)acc[0].val2 / 1000000.0;
-        
-        /* 检查是否需要设置参考值（中断触发） */
-        if (should_set_reference) {
-            reference_x = acc_x;
-            reference_set = true;
-            should_set_reference = false;  /* 清除标志 */
-            printf("Reference X set to: %.6f\n", reference_x);
-        }
-        
-        /* LED控制逻辑 */
-        if (reference_set) {
-            /* 计算当前X轴与参考值的差值（只关心减少的情况） */
-            double change = reference_x - acc_x;  /* 正值表示X轴减少了 */
-            
-            /* 只有当X轴值比参考值小超过MAX_CHANGE时才点亮LED */
-            if (change > MAX_CHANGE) {
-                gpio_pin_set_dt(&led, 1);  /* 点亮LED */
-                printf("LED ON (decrease: %.3f) - ", change);
-            } else {
-                gpio_pin_set_dt(&led, 0);  /* 熄灭LED */
-                if (change > 0) {
-                    printf("LED OFF (decrease: %.3f, not enough) - ", change);
-                } else {
-                    printf("LED OFF (increase: %.3f) - ", -change);
-                }
-            }
-        } else {
-            /* 如果还没有设置参考值，LED保持熄灭 */
-            gpio_pin_set_dt(&led, 0);
-            printf("No reference set - ");
-        }
-        
-        printf("AX: %d.%06d; AY: %d.%06d; AZ: %d.%06d; "
-               "GX: %d.%06d; GY: %d.%06d; GZ: %d.%06d;",
-               acc[0].val1, acc[0].val2,
-               acc[1].val1, acc[1].val2,
-               acc[2].val1, acc[2].val2,
-               gyr[0].val1, gyr[0].val2,
-               gyr[1].val1, gyr[1].val2,
-               gyr[2].val1, gyr[2].val2);
-        
-        if (reference_set) {
-            printf(" [Ref: %.3f]", reference_x);
-        }
-        printf("\n");
+    if (err2 < 0) {
+        LOG_ERR("LRA2 PWM set failed (%d)", err2);
+        return err2;
     }
     
     return 0;
 }
+
+int main(void)
+{
+        const struct device *const dev = DEVICE_DT_GET_ONE(bosch_bmi270);
+        struct sensor_value acc[3], gyr[3];
+        struct sensor_value full_scale, sampling_freq, oversampling;
+        
+        /* LED GPIO device and pins */
+        const struct device *gpio_dev = DEVICE_DT_GET(DT_NODELABEL(gpio0));
+        
+        /* Check if GPIO device is ready */
+        if (!device_is_ready(gpio_dev)) {
+                LOG_ERR("GPIO device not ready");
+                return 0;
+        }
+        
+        /* Configure LED pins as outputs */
+        gpio_pin_configure(gpio_dev, 22, GPIO_OUTPUT_ACTIVE | GPIO_ACTIVE_HIGH);
+        gpio_pin_configure(gpio_dev, 23, GPIO_OUTPUT_ACTIVE | GPIO_ACTIVE_HIGH);
+        
+        LOG_INF("LEDs configured on P0.22 and P0.23");
+        
+        /* Initialize ADC for thermistor (P0.04) */
+        if (!adc_is_ready_dt(&adc_channel)) {
+                LOG_ERR("ADC device not ready");
+                return 0;
+        }
+        
+        int ret = adc_channel_setup_dt(&adc_channel);
+        if (ret < 0) {
+                LOG_ERR("adc_channel_setup failed (%d)", ret);
+                return 0;
+        }
+        
+        ret = adc_sequence_init_dt(&adc_channel, &adc_seq);
+        if (ret < 0) {
+                LOG_ERR("adc_sequence_init failed (%d)", ret);
+                return 0;
+        }
+        
+        LOG_INF("ADC configured for thermistor on P0.04, channel %d", adc_channel.channel_id);
+        LOG_INF("ADC device: %s, resolution: %d bits", adc_channel.dev->name, adc_channel.resolution);
+        
+        /* Test ADC reading */
+        int test_mv = 0;
+        ret = read_thermistor_mv(&test_mv);
+        if (ret == 0) {
+                LOG_INF("Initial ADC test: raw=%d, mV=%d", (int)adc_buf, test_mv);
+        } else {
+                LOG_ERR("Initial ADC test failed: %d", ret);
+        }
+        
+        /* Initialize PWM for Peltier (P0.10) */
+        const struct pwm_dt_spec pwm_peltier = PWM_DT_SPEC_GET(DT_ALIAS(pwm_led0));
+        if (!pwm_is_ready_dt(&pwm_peltier)) {
+                LOG_ERR("PWM device not ready");
+                return 0;
+        }
+        
+        /* Disable Peltier initially */
+        set_peltier_pwm(PELTIER_OFF_NS);
+        LOG_INF("PWM configured for Peltier on P0.10");
+ 
+        if (!device_is_ready(dev)) {
+                LOG_ERR("Device %s is not ready", dev->name);
+                return 0;
+        }
+
+        LOG_INF("Device %p name is %s", dev, dev->name);
+ 
+         /* Setting scale in G, due to loss of precision if the SI unit m/s^2
+          * is used
+          */
+         full_scale.val1 = 2;            /* G */
+         full_scale.val2 = 0;
+         sampling_freq.val1 = 100;       /* Hz. Performance mode */
+         sampling_freq.val2 = 0;
+         oversampling.val1 = 1;          /* Normal mode */
+         oversampling.val2 = 0;
+ 
+        int rc;
+        rc = sensor_attr_set(dev, SENSOR_CHAN_ACCEL_XYZ, SENSOR_ATTR_FULL_SCALE, &full_scale);
+        if (rc) { LOG_ERR("Accel FULL_SCALE set failed (%d)", rc); }
+        rc = sensor_attr_set(dev, SENSOR_CHAN_ACCEL_XYZ, SENSOR_ATTR_OVERSAMPLING, &oversampling);
+        if (rc) { LOG_ERR("Accel OVERSAMPLING set failed (%d)", rc); }
+         /* Set sampling frequency last as this also sets the appropriate
+          * power mode. If already sampling, change to 0.0Hz before changing
+          * other attributes
+          */
+        rc = sensor_attr_set(dev, SENSOR_CHAN_ACCEL_XYZ, SENSOR_ATTR_SAMPLING_FREQUENCY, &sampling_freq);
+        if (rc) { LOG_ERR("Accel SAMPLING_FREQUENCY set failed (%d)", rc); }
+ 
+ 
+         /* Setting scale in degrees/s to match the sensor scale */
+         full_scale.val1 = 500;          /* dps */
+         full_scale.val2 = 0;
+         sampling_freq.val1 = 100;       /* Hz. Performance mode */
+         sampling_freq.val2 = 0;
+         oversampling.val1 = 1;          /* Normal mode */
+         oversampling.val2 = 0;
+ 
+        rc = sensor_attr_set(dev, SENSOR_CHAN_GYRO_XYZ, SENSOR_ATTR_FULL_SCALE, &full_scale);
+        if (rc) { LOG_ERR("Gyro FULL_SCALE set failed (%d)", rc); }
+        rc = sensor_attr_set(dev, SENSOR_CHAN_GYRO_XYZ, SENSOR_ATTR_OVERSAMPLING, &oversampling);
+        if (rc) { LOG_ERR("Gyro OVERSAMPLING set failed (%d)", rc); }
+         /* Set sampling frequency last as this also sets the appropriate
+          * power mode. If already sampling, change sampling frequency to
+          * 0.0Hz before changing other attributes
+          */
+        rc = sensor_attr_set(dev, SENSOR_CHAN_GYRO_XYZ, SENSOR_ATTR_SAMPLING_FREQUENCY, &sampling_freq);
+        if (rc) { LOG_ERR("Gyro SAMPLING_FREQUENCY set failed (%d)", rc); }
+ 
+        while (1) {
+                /* 100ms period for better temperature monitoring */
+                k_sleep(K_MSEC(100));
+
+                rc = sensor_sample_fetch(dev);
+                if (rc) {
+                        LOG_ERR("sensor_sample_fetch failed (%d)", rc);
+                        continue;
+                }
+
+                rc = sensor_channel_get(dev, SENSOR_CHAN_ACCEL_XYZ, acc);
+                if (rc) { LOG_ERR("ACCEL_XYZ read failed (%d)", rc); }
+                rc = sensor_channel_get(dev, SENSOR_CHAN_GYRO_XYZ, gyr);
+                if (rc) { LOG_ERR("GYRO_XYZ read failed (%d)", rc); }
+
+                /* Convert X acceleration to m/s^2 for comparison */
+                double ax_ms2 = sensor_value_to_double(&acc[0]);
+                
+                /* Read temperature from thermistor */
+                int mv = 0;
+                double temp_c = NAN;
+                ret = read_thermistor_mv(&mv);
+                if (ret == 0) {
+                        temp_c = thermistor_temp_c_from_mv(mv);
+                }
+                
+                /* Control LEDs, Peltier, and LRA based on X acceleration and temperature */
+                bool led_on = false;
+                uint32_t peltier_ns = PELTIER_OFF_NS;
+                uint32_t lra_ns = LRA_OFF_NS;
+                
+                if (ax_ms2 < 5.0) {
+                        /* X acceleration < 5 m/s^2: turn on LEDs and LRA */
+                        led_on = true;
+                        gpio_pin_set(gpio_dev, 22, 1);
+                        gpio_pin_set(gpio_dev, 23, 1);
+                        lra_ns = LRA_ON_NS;  /* LRA vibration motor ON */
+                        
+                        /* Check temperature protection for Peltier */
+                        if (!isnan(temp_c) && temp_c > TEMP_CUTOFF) {
+                                peltier_ns = PELTIER_OFF_NS;
+                                LOG_WRN("Temperature protection: %.1f°C >= %.1f°C -> Peltier OFF", 
+                                        temp_c, TEMP_CUTOFF);
+                        } else {
+                                peltier_ns = PELTIER_ON_NS;
+                                if (!isnan(temp_c)) {
+                                        LOG_INF("Peltier ON (Temp=%.1f°C)", temp_c);
+                                } else {
+                                        LOG_INF("Peltier ON (Temp=N/A)");
+                                }
+                        }
+                } else {
+                        /* X acceleration >= 5 m/s^2: turn off LEDs, Peltier, and LRA */
+                        led_on = false;
+                        peltier_ns = PELTIER_OFF_NS;
+                        lra_ns = LRA_OFF_NS;  /* LRA vibration motor OFF */
+                        gpio_pin_set(gpio_dev, 22, 0);
+                        gpio_pin_set(gpio_dev, 23, 0);
+                }
+                
+                /* Set Peltier PWM */
+                set_peltier_pwm(peltier_ns);
+                
+                /* Set LRA PWM */
+                set_lra_pwm(lra_ns);
+
+                /* printf output like reference code */
+                printf("AX: %d.%06d AY: %d.%06d AZ: %d.%06d  "
+                       "GX: %d.%06d GY: %d.%06d GZ: %d.%06d  ",
+                       acc[0].val1, acc[0].val2, acc[1].val1, acc[1].val2, acc[2].val1, acc[2].val2,
+                       gyr[0].val1, gyr[0].val2, gyr[1].val1, gyr[1].val2, gyr[2].val1, gyr[2].val2);
+
+                if (ret == 0)      printf("[Therm=%dmV, %.1fC] ", mv, temp_c);
+                printf("[LED=%s, Peltier=%s, LRA=%s]\n",
+                       led_on ? "ON" : "OFF",
+                       (peltier_ns == PELTIER_OFF_NS) ? "OFF" : "ON(50%)",
+                       (lra_ns == LRA_OFF_NS) ? "OFF" : "ON(50%)");
+        }
+         return 0;
+ }
