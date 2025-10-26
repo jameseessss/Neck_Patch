@@ -9,7 +9,7 @@ A lightweight, discreet neck-posture coach built on **nRF5340 + IMU**, providing
 ## 📷 Bench & Design Gallery
 
 <p align="center">
-  <img src="docs/images/bench_drv_test.jpg" alt="Bench test of driver/LRA & Peltier control" width="72%">
+  <img src="docs/images/bench_drv_test.png" alt="Bench test of driver/LRA & Peltier control" width="72%">
 </p>
 <p align="center"><em>Figure 1 — Driver bench test (H-bridge + PWM + thermistor ADC). Used for LRA and Peltier bring-up.</em></p>
 
