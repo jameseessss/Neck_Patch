@@ -84,12 +84,24 @@ static double thermistor_temp_c_from_mv(int vout_mv)
 /* ===== PWM Control Function ===== */
 static int set_peltier_pwm(uint32_t pulse_ns)
 {
-    /* Use pwm_led0 alias (P0.10) */
-    const struct pwm_dt_spec pwm_peltier = PWM_DT_SPEC_GET(DT_ALIAS(pwm_led0));
+    /* First Peltier: Use pwm_led0 alias */
+    const struct pwm_dt_spec pwm_peltier1 = PWM_DT_SPEC_GET(DT_ALIAS(pwm_led0));
+    /* Second Peltier: Use pwm_led2 alias (P1.12) */
+    const struct pwm_dt_spec pwm_peltier2 = PWM_DT_SPEC_GET(DT_ALIAS(pwm_led2));
     
-    int err = pwm_set_dt(&pwm_peltier, PWM_PERIOD_NS, pulse_ns);
-    if (err) LOG_ERR("pwm_set_dt err %d", err);
-    return err;
+    int err1 = pwm_set_dt(&pwm_peltier1, PWM_PERIOD_NS, pulse_ns);
+    int err2 = pwm_set_dt(&pwm_peltier2, PWM_PERIOD_NS, pulse_ns);
+    
+    if (err1 < 0) {
+        LOG_ERR("Peltier1 PWM set failed (%d)", err1);
+        return err1;
+    }
+    if (err2 < 0) {
+        LOG_ERR("Peltier2 PWM set failed (%d)", err2);
+        return err2;
+    }
+    
+    return 0;
 }
 
 /* ===== LRA Vibration Motor Control Function ===== */
@@ -164,16 +176,21 @@ int main(void)
                 LOG_ERR("Initial ADC test failed: %d", ret);
         }
         
-        /* Initialize PWM for Peltier (P0.10) */
-        const struct pwm_dt_spec pwm_peltier = PWM_DT_SPEC_GET(DT_ALIAS(pwm_led0));
-        if (!pwm_is_ready_dt(&pwm_peltier)) {
-                LOG_ERR("PWM device not ready");
+        /* Initialize PWM for Peltiers */
+        const struct pwm_dt_spec pwm_peltier1 = PWM_DT_SPEC_GET(DT_ALIAS(pwm_led0));
+        const struct pwm_dt_spec pwm_peltier2 = PWM_DT_SPEC_GET(DT_ALIAS(pwm_led2));
+        if (!pwm_is_ready_dt(&pwm_peltier1)) {
+                LOG_ERR("Peltier1 PWM device not ready");
+                return 0;
+        }
+        if (!pwm_is_ready_dt(&pwm_peltier2)) {
+                LOG_ERR("Peltier2 PWM device not ready");
                 return 0;
         }
         
-        /* Disable Peltier initially */
+        /* Disable Peltiers initially */
         set_peltier_pwm(PELTIER_OFF_NS);
-        LOG_INF("PWM configured for Peltier on P0.10");
+        LOG_INF("PWM configured for Peltiers: P1.09 (Peltier1) and P1.12 (Peltier2)");
  
         if (!device_is_ready(dev)) {
                 LOG_ERR("Device %s is not ready", dev->name);
